@@ -16,24 +16,30 @@ while True:
     elif comp =="s":
         if player.lower() == "s":
             result="Tie"
-        if player.lower() == "w":
+        elif player.lower() == "w":
             result="Lose"
-        if player.lower() == "g":
+        elif player.lower() == "g":
             result="Win"
+        else:
+            result = "Chose from s , w , g or exit."
     elif comp =="w":
         if player.lower() == "s":
             result="Win"
-        if player.lower() == "w":
+        elif player.lower() == "w":
             result="Tie"
-        if player.lower() == "g":
+        elif player.lower() == "g":
             result="Lose"
+        else:
+            result = "Chose from s , w , g or exit."
     elif comp =="g":
         if player.lower() == "s":
             result="Lose"
-        if player.lower() == "w":
+        elif player.lower() == "w":
             result="Win"
-        if player.lower() == "g":
+        elif player.lower() == "g":
             result="Tie"
+        else:
+            result = "Chose from s , w , g or exit."
     print(f'''Copmuter Chose : {comp}
     {result}''')
 print("Thanks for playing!!")
