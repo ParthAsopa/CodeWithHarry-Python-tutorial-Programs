@@ -18,6 +18,9 @@ class Train:
     def bookTicket(self):
         self.seatsAva=self.seatsAva-1
         log_update(self.name,self.seatsAva)
+    def ticketCancel(self):
+        self.seatsAva=self.seatsAva+1
+        log_update(self.name,self.seatsAva)
 
 class Passeneger:
     def __details__(self, name, age, gender):
@@ -48,6 +51,21 @@ Sorry, no seats available
 Try in some other train.
 
 ********************************************************************************''')
+    def ticketCancel(self):
+        name=input("Enter Train Name: \n").lower()
+        trin=Train()
+        trin.details(name)
+        trin.ticketCancel()
+        print(f'''
+********************************************************************************
+The following seat has been canceled:
+Name: {self.name}
+Age: {self.age}
+Gender: {self.gender}
+Seat number: {trin.seatsAva}
+Seats Available: {trin.seatsAva}
+********************************************************************************''')
+
 while True:
     print('''
 How may I help you?
@@ -62,6 +80,13 @@ How may I help you?
         pas=Passeneger()
         pas.__details__(name,age,gender)
         pas.bookTicket()
+    elif command=="cancel ticket":
+        name=input("Enter your name: \n")
+        age=input("Enter your age: \n")
+        gender=input("Enter your gender: \n")
+        pas=Passeneger()
+        pas.__details__(name,age,gender)
+        pas.ticketCancel()
     elif command == "exit":
         break    
     else:
