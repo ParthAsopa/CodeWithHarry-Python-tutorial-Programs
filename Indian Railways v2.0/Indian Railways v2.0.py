@@ -18,6 +18,7 @@ class Train:
     def bookTicket(self):
         self.seatsAva=self.seatsAva-1
         log_update(self.name,self.seatsAva)
+    
     def ticketCancel(self):
         self.seatsAva=self.seatsAva+1
         log_update(self.name,self.seatsAva)
@@ -27,6 +28,7 @@ class Passeneger:
         self.name = name
         self.age=age
         self.gender = gender
+    
     def bookTicket(self):
         name=input("Enter Train Name: \n").lower()
         trin=Train()
@@ -51,6 +53,7 @@ Sorry, no seats available
 Try in some other train.
 
 ********************************************************************************''')
+    
     def ticketCancel(self):
         name=input("Enter Train Name: \n").lower()
         trin=Train()
@@ -70,6 +73,7 @@ while True:
     print('''
 How may I help you?
 ''')
+    
     command=input(">")
     command=command.lower()
 
