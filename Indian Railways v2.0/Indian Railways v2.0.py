@@ -1,3 +1,4 @@
+# Creating functions to update train's seats status
 def log_read(name):
     with open(f"{name}.txt") as f:
         return int(f.read())
@@ -10,7 +11,7 @@ print('''***********************************************************************
 Hi! Welcome to Indian Railways!
 ********************************************************************************''')
 
-class Train:
+class Train:#class for train's functions
     def details(self,name):
         self.name = name
         self.seatsAva = log_read(self.name)
@@ -23,7 +24,7 @@ class Train:
         self.seatsAva=self.seatsAva+1
         log_update(self.name,self.seatsAva)
 
-class Passeneger:
+class Passeneger:#class for passenger's functions
     def __details__(self, name, age, gender):
         self.name = name
         self.age=age
@@ -31,9 +32,9 @@ class Passeneger:
     
     def bookTicket(self):
         name=input("Enter Train Name: \n").lower()
-        trin=Train()
+        trin=Train() #Creating an object for train to carry out passenger's function
         trin.details(name)
-        if trin.seatsAva!=0:
+        if trin.seatsAva!=0:#If steats are available
             print(f'''
 ********************************************************************************
 A seat has been booked to 
@@ -46,7 +47,8 @@ Seat number: {trin.seatsAva}
             trin.bookTicket()
             print(f'''Seats Left: {trin.seatsAva}
 ********************************************************************************''')
-        elif trin.seatsAva ==0:
+        
+        elif trin.seatsAva ==0:#If seats not available
             print('''********************************************************************************
 
 Sorry, no seats available
