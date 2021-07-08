@@ -20,9 +20,6 @@ class Train:
         log_update(self.name,self.seatsAva)
 
 class Passeneger:
-    name=input("Enter your name: \n")
-    age=input("Enter your age: \n")
-    gender=input("Enter your gender: \n")
     def __details__(self, name, age, gender):
         self.name = name
         self.age=age
@@ -33,17 +30,17 @@ class Passeneger:
         trin.details(name)
         if trin.seatsAva!=0:
             print(f'''
-    ********************************************************************************
-    A seat has been booked to 
-    {self.name}
-    Age:{self.age}
-    Gender:{self.gender}
-    Train Name: {trin.name}
-    Seat number: {trin.seatsAva}
+********************************************************************************
+A seat has been booked to 
+{self.name}
+Age:{self.age}
+Gender:{self.gender}
+Train Name: {trin.name}
+Seat number: {trin.seatsAva}
     ''')
             trin.bookTicket()
             print(f'''Seats Left: {trin.seatsAva}
-    ********************************************************************************''')
+********************************************************************************''')
         elif trin.seatsAva ==0:
             print('''********************************************************************************
 
@@ -59,7 +56,11 @@ How may I help you?
     command=command.lower()
 
     if command=="book a ticket":
+        name=input("Enter your name: \n")
+        age=input("Enter your age: \n")
+        gender=input("Enter your gender: \n")
         pas=Passeneger()
+        pas.__details__(name,age,gender)
         pas.bookTicket()
     elif command == "exit":
         break    
