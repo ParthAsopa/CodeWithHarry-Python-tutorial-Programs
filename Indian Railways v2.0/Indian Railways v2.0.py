@@ -43,8 +43,8 @@ Age:{self.age}
 Gender:{self.gender}
 Train Name: {trin.name}
 Seat number: {trin.seatsAva}
-    ''')
-            trin.bookTicket()
+''')
+            trin.bookTicket()            
             print(f'''Seats Left: {trin.seatsAva}
 ********************************************************************************''')
         
