@@ -23,5 +23,5 @@ if guess<n:#if no. guesses if less than last high score
     with open("high_score.txt","w") as f:
         f.write(str(n))
 elif guess >=n:#if no. guesses if greater than or equal to last high score
-    pass
+    pass       #do nothing
 print(f"\nHigh Score = {n}\n")
