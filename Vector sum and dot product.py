@@ -32,6 +32,9 @@ class Vector:
         for x in range(len(self.vec)):# will multiply icap with icap and similarly for jcap and kcap and add them to get the dot product.
             mulsum+=self.vec[x]+other.vec[x]
         return mulsum
+    
+    def __len__(self):#display dimention if vector.
+        return f"Vector is of {len(self.vec)} dimensions."
 
 print('''**********************Welcome to Vector addition and dot product!!**********************''')
 x1=int(input("Enter magnitude of vector1 in x direction:"))
