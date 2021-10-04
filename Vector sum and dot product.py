@@ -56,5 +56,18 @@ print(f"Vector1 . Vector2 = {vec1*vec2}\n")
 
 print("Thank for using my program!!!")
 
-#all "\n" used in line 36 to 54 are dor better appearance.
+#all "\n" used in line 36 to 54 are for better appearance.
 
+
+
+'''
+for vector  of n dimentions:
+
+def __str__(self):
+    str1=""
+    index=0
+    for i in self.vec:
+        str1+=f"({i}) a{index} + "
+        index+=1
+    return str1[:-3]
+'''
