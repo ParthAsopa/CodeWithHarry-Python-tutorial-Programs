@@ -1,5 +1,5 @@
 import random
-num=random.randint(1,10)#random number between 1 to 10
+num=random.randint(1,100)#random number between 1 to 10
 
 guess=0
 while True:
