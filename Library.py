@@ -12,15 +12,15 @@ class Library:
             return True
         elif bookname not in self.booksAva:
             if bookname in self.booksIss:
-                print("The book is curently issued by someone else. Sorry for the inconvinience.")
+                print("The book is curently issued by someone else. Sorry for the inconvinience.\n")
                 return False
             elif bookname not in self.booksIss:
-                print("Sorry we don't have this book.")
+                print("Sorry we don't have this book.\n")
                 return False
     
     def returned(self,bookname):
         if bookname in self.booksAva:
-            print("The book is already returned.")
+            print("The book is already returned.\n")
             return False
         elif bookname not in self.booksAva:
             if bookname in self.booksIss:
@@ -30,7 +30,7 @@ class Library:
                     f.write(self.booksAva+"\n"+bookname+"\n")
                 return True
             elif bookname not in self.booksIss:
-                print("This book doesn't belong to our library.")
+                print("This book doesn't belong to our library.\n")
                 return False
 
 
@@ -42,21 +42,30 @@ class Student:
         self.gender = gender
 
     def issued(self,bookname):
-        print(f'''{bookname} has been issued to
+        print(f'''\n{bookname} has been issued to
 Name - {self.name}
 Age - {self.age}
 Gender - {self.gender}
-Please keep the book in good condition and return it within 30 days.''')
+Please keep the book in good condition and return it within 30 days.\n''')
 
     def returned(self,bookname):
-        print(f'''{bookname} has been returnd by
+        print(f'''\n{bookname} has been returnd by
 Name - {self.name}
 Age - {self.age}
 Gender - {self.gender}
-Thanks for visiting our library Do visit again!!.''')
+Thanks for visiting our library Do visit again!!.\n''')
 
 
 if __name__ == '__main__':
+    greeting='''Welcome to our library!!!
+You can:
+Borrow - Type "borrow"
+Return - Type "return"
+Quit the program - Type "quit"
+List of available books - Type "books available"
+List of books issued - Type "Books issued"
+'''
+    print(greeting)
     try:
         user_name=input("Enter your name:\n")
         user_age=input("Enter your age:\n")
@@ -73,7 +82,7 @@ if __name__ == '__main__':
 
             lib = Library(books_ava,books_iss)
 
-            command=input("> ").lower()
+            command=input("\n> ").lower()
             if command == "borrow":
                 user_book=input("Enter the name of the book you want:\n")
                 lib.issued(user_book)
@@ -88,9 +97,15 @@ if __name__ == '__main__':
                     stu.returned(user_book)
                 else:
                     pass
-            elif command=="quit":
+            elif command == "books available":
+                print(lib.booksAva)
+            elif command == "books issued":
+                print(lib.booksIss)
+            elif command=="quit"or "exit":
+                print("Thanks for visiting our library Do visit again!!.\n")
                 break
             else:
-                print("I don't understand that.")
+                print("I don't understand that.\n")
     except Exception as e:
         print(f"Your input threw an error:\n{e} ")
+        
