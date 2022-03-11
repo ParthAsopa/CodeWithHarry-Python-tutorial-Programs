@@ -1,5 +1,5 @@
 from functools import reduce
-expression = input("Enter the numbers separated by spaces or commas.\n")#take the expression
+expression = input("Enter the prices separated by spaces or commas.\n")#take the expression
 l1 = []
 expression=expression.replace(" ", ",")#replace the spaces with commas so that the terms can be separated.
 
