@@ -1,7 +1,8 @@
 from functools import reduce
-expression = input("Enter the prices separated by spaces or commas.\n")#take the expression
+expression = input('Enter the prices separated by spaces or commas or "+".\n')#take the expression
 l1 = []
 expression=expression.replace(" ", ",")#replace the spaces with commas so that the terms can be separated.
+expression=expression.replace("+", ",")#replace the spaces with commas so that the terms can be separated.
 
 while expression.find(",") != -1:#while loop till there are no more commas in the string, which means till we don't reach the last term.
     commaindex = expression.find(",")#finding the index of first comma so that we can append the terms that are separated by commas in a list.
