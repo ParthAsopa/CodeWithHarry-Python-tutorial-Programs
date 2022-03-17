@@ -3,8 +3,7 @@ class factorial_and_no_of_trailing_zeros():
         if n == 0 or n == 1:
             self.factorial = 1
         else:
-            self.factorial = n * \
-                factorial_and_no_of_trailing_zeros.Factorial(self, n-1)
+            self.factorial = n * factorial_and_no_of_trailing_zeros.Factorial(self, n-1)
         return self.factorial
 
     def No_of_trailing_zeros(self, n):
