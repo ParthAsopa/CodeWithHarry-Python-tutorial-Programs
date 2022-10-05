@@ -5,10 +5,9 @@ with open("Currency.txt") as f:
 currency = {}
 
 for line in lines:  # accessing each line separately from the list
-    # splitting the lines from the places where \t is there...this separates the currency names with there value.
-    parsed = line.split("\t")
-    # storing the name of currency with there corresponding values in INR
-    currency[parsed[0]] = parsed[1]
+    parsed = line.split("\t")# splitting the lines from the places where \t is there...this separates the currency names with there value.
+    currency[parsed[0]] = parsed[1]# storing the name of currency with there corresponding values in INR
+
 
 
 usr_input1 = int(input("Enter the ammount:\n"))  # Ammount to be converted
