@@ -18,7 +18,6 @@ The following technologies and libraries are used in this repository:
 
 - **Python 3.x** – The core programming language.
 - **pip** – Python's package installer (if external libraries are used).
-- **Jupyter Notebook** (optional) – For interactive Python code execution.
 
 Additional libraries and tools may be introduced as I progress, such as:
 
